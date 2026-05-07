@@ -1,0 +1,1 @@
+print("Goated\n" *3, end = "")
