@@ -1,0 +1,21 @@
+#A python program that takes 2 numbers from the command line argument
+#Converts them to integers
+#prints their sum
+
+import sys
+
+if len(sys.argv) > 3:
+    print("Too many arguments")
+    sys.exit()
+elif len(sys.argv) < 3:
+    print("Too few arguments")
+    sys.exit()
+try:
+    num1 = int(sys.argv[1])
+    num2 = int(sys.argv[2])
+except ValueError:
+    print("Invalid number")
+    sys.exit()
+
+sum = num1 + num2
+print(f"Sum: {sum}")

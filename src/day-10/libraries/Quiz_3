@@ -1,0 +1,30 @@
+#A program that takes one number from the command line argument
+#The number represents how many random numbers to generate
+#Generates random numbers between 1 and 100
+#Stores them in a list
+#prints the list of those numbers and mean of those numbers
+import sys
+import statistics
+import random
+
+if len(sys.argv) > 2:
+    print("Too many arguments")
+    sys.exit()
+elif len(sys.argv) < 2:
+    print("Too few arguments")
+    sys.exit()
+try:
+    count = int(sys.argv[1])
+
+except ValueError:
+    print("Invalid number")
+    sys.exit()
+
+numbers = []
+for _ in range (count):
+    num = random.randint(1, 100)
+    numbers.append(num)
+print(f"Numbers: {numbers}")
+
+avg = statistics.mean(numbers)
+print(f"Mean: {avg}")
